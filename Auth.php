@@ -32,35 +32,35 @@ class Auth
     public function mobileToken($uid, $userdata, $expires = 2592000)
     {
         $accessToken = $this->store('mobile', $uid, $userdata, $expires);
-        return ['access_token' => $accessToken, 'expires' => $expires];
+        return (object) ['accessToken' => $accessToken, 'expires' => $expires];
     }
 
     // 浏览器端Token
     public function browserToken($uid, $userdata, $expires = 172800)
     {
         $accessToken = $this->store('browser', $uid, $userdata, $expires);
-        return ['access_token' => $accessToken, 'expires' => $expires];
+        return (object) ['accessToken' => $accessToken, 'expires' => $expires];
     }
 
     // API应用Token
     public function apiToken($uid, $userdata, $expires = 7200)
     {
         $accessToken = $this->store('api', $uid, $userdata, $expires);
-        return ['access_token' => $accessToken, 'expires' => $expires];
+        return (object) ['accessToken' => $accessToken, 'expires' => $expires];
     }
 
     // PC端给移动端授权Token
     public function pamToken($uid, $userdata, $expires = 300)
     {
         $accessToken = $this->store('api', $uid, $userdata, $expires);
-        return ['access_token' => $accessToken, 'expires' => $expires];
+        return (object) ['accessToken' => $accessToken, 'expires' => $expires];
     }
 
     // 移动端给PC端授权Token
     public function mapToken($uid, $userdata, $expires = 300)
     {
         $accessToken = $this->store('api', $uid, $userdata, $expires);
-        return ['access_token' => $accessToken, 'expires' => $expires];
+        return (object) ['accessToken' => $accessToken, 'expires' => $expires];
     }
 
     // 展示token数据
@@ -84,7 +84,7 @@ class Auth
         // 剔除秘钥
         unset($userdata['__secret__']);
         // 返回
-        return $userdata;
+        return (object) $userdata;
     }
 
     // 存储token数据
