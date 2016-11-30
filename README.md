@@ -6,6 +6,11 @@
 
 [基于token的多平台身份认证架构设计](http://www.cnblogs.com/beer/p/6029861.html)
 
+### 细节说明
+
+- 每次新生成access_token时，该用户的该类型的旧access_token将失效
+- 在redis里，每个用户仅有一个hash，省空间、好同步，实现原理请研究源代码
+
 ### 范例 (Example)
 
 生成移动端access_token，存储用户信息
@@ -27,8 +32,8 @@ $userdata = $auth->show($accessToken);
 if(is_null($userdata)){
     die('access_token Authentication Failed');
 }
-echo $auth->uid;
-echo $auth->name;
+echo $userdata->uid;
+echo $userdata->name;
 ```
 
 生成其它类型的access_token
