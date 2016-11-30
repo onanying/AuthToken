@@ -52,14 +52,14 @@ class Auth
     // PC端给移动端授权Token
     public function pamToken($uid, $userdata, $expires = 300)
     {
-        $accessToken = $this->store('api', $uid, $userdata, $expires);
+        $accessToken = $this->store('pam', $uid, $userdata, $expires);
         return (object) ['accessToken' => $accessToken, 'expires' => $expires];
     }
 
     // 移动端给PC端授权Token
     public function mapToken($uid, $userdata, $expires = 300)
     {
-        $accessToken = $this->store('api', $uid, $userdata, $expires);
+        $accessToken = $this->store('map', $uid, $userdata, $expires);
         return (object) ['accessToken' => $accessToken, 'expires' => $expires];
     }
 
@@ -72,7 +72,7 @@ class Auth
             return null;
         }
         // 取出数据
-        $key = "token:{$tokenData['tokenType']}:{$tokenData['uid']}";
+        $key = "auth:{$tokenData['tokenType']}:{$tokenData['uid']}";
         $userdata = $this->getData($key);
         if (empty($userdata)) {
             return null;
@@ -95,7 +95,7 @@ class Auth
         $userdata = (array) $userdata;
         $userdata['__secret__'] = $secret;
         // 保存数据
-        $key = "token:{$tokenType}:{$uid}";
+        $key = "auth:{$tokenType}:{$uid}";
         $this->setData($key, $userdata, $expires);
         // 返回access_token
         return self::accessTokenEncode($tokenType, $uid, $secret);
