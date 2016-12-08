@@ -185,12 +185,3 @@ class Authmulti
     }
 
 }
-
-
-// 实例化
-$auth = new Authmulti(['dbConf' => ['host' => '192.168.0.68', 'port' => '6379', 'auth' => '123456'], 'savePath' => 'test-multi']);
-// 设置要操作的token
-$auth->setToken('M2Q2MTU0NWQwNTdjNGIzYTYwNjA5ZDQ0ZDIzYmUzMGNmY2ViMTk2MA');
-// 重置有效期
-$status = $auth->resetExpires(88888);
-var_dump($status);
