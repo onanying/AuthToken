@@ -8,10 +8,12 @@
 
 ### 功能简介
 
-- [Authmulti.php 同时在线模式](http://www.cnblogs.com/beer/p/6029861.html)
-- [Authonly.php 被迫下线模式](http://www.cnblogs.com/beer/p/6029861.html)
+- [Authmulti.php 同时在线模式](https://github.com/onanying/AuthToken#authmultiphp-同时在线模式)
+- [Authonly.php 被迫下线模式](https://github.com/onanying/AuthToken#authonlyphp-被迫下线模式)
 
-### Authmulti.php 同时在线模式
+
+
+## Authmulti.php 同时在线模式
 
 > 像QQ邮箱一样，同一账号可在多个电脑上登录，并不会把其他电脑上的账号强制退出
 
@@ -110,7 +112,9 @@ var_dump($status);
 
 	bool(false)
 
-### Authonly.php 被迫下线模式
+
+
+## Authonly.php 被迫下线模式
 
 > 像QQ一样，同一账号在另一个手机登录时，本手机会提示该账号已经在其他设备登录
 
