@@ -63,7 +63,7 @@ var_dump($status);
 
 	bool(true)
 
-失败时返回结果 (说明token无效或savePath配置错误)
+失败时返回结果 (说明token无效)
 
 	bool(false)
 
@@ -88,7 +88,7 @@ var_dump($userData);
 	  string(6) "小美"
 	}
 
-失败时返回结果 (说明token无效或savePath配置错误)
+失败时返回结果 (说明token无效)
 
 	NULL
 
@@ -108,7 +108,7 @@ var_dump($status);
 
 	bool(true)
 
-失败时返回结果 (说明token无效或savePath配置错误)
+失败时返回结果 (说明token无效)
 
 	bool(false)
 
@@ -165,7 +165,7 @@ var_dump($status);
 
 	bool(true)
 
-失败时返回结果 (说明token无效或savePath配置错误)
+失败时返回结果 (说明token无效)
 
 	bool(false)
 
@@ -191,7 +191,7 @@ var_dump($userData);
 	  string(6) "小美"
 	}
 
-失败时返回结果 (说明token无效或savePath配置错误)
+失败时返回结果 (说明token无效)
 
 	NULL
 
@@ -211,6 +211,6 @@ var_dump($status);
 
 	bool(true)
 
-失败时返回结果 (说明token无效或savePath配置错误)
+失败时返回结果 (说明token无效)
 
 	bool(false)
